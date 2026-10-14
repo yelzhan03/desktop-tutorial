@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>Клубника в шоколаде 🍓🍫</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍓</text></svg>">
+<style>
+:root{--bg:#0d0d20;--ink:#fff8ff;--muted:#b9b7d5;--pink:#ff5e9c;--violet:#8b7bff;--cyan:#7ce8f2;--choc:#6b3a2a;--line:rgba(255,255,255,.14)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;min-height:100%}
+body{color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;background:radial-gradient(ellipse at 10% 0,rgba(139,123,255,.25),transparent 40%),radial-gradient(ellipse at 90% 90%,rgba(255,94,156,.2),transparent 35%),var(--bg);padding:env(safe-area-inset-top,0) 0 env(safe-area-inset-bottom,0);overflow-x:hidden}
+button,textarea{font:inherit}
+button{-webkit-appearance:none;appearance:none;touch-action:manipulation;cursor:pointer}
+.nojs{border:1px solid #ffd27a77;background:#ffd27a18;color:#ffe9b8;border-radius:16px;padding:14px 16px;margin-bottom:18px;font-size:14px;line-height:1.5}
+.wrap{max-width:520px;margin:auto;padding:22px 20px 40px}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.badge{border:1px solid #ff5e9c55;background:#ff5e9c14;color:#ffd6e6;padding:7px 12px;border-radius:99px;letter-spacing:0;text-transform:none;font-weight:600}
+.screen{display:none;animation:in .5s ease both}.screen.on{display:block}
+@keyframes in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.eyebrow{color:var(--cyan);font-size:12px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;margin-bottom:12px}
+h1{font-size:clamp(36px,10vw,54px);line-height:1.02;letter-spacing:-.05em;margin:0 0 16px;font-weight:900}
+h2{font-size:30px;line-height:1.1;letter-spacing:-.04em;margin:0 0 12px}
+.g{background:linear-gradient(100deg,#ff8bb8,#b8aaff 55%,#8beaf2);-webkit-background-clip:text;background-clip:text;color:transparent}
+p{color:var(--muted);line-height:1.65;font-size:15px;margin:0 0 18px}
+.hero{font-size:84px;text-align:center;margin:6px 0 10px;filter:drop-shadow(0 12px 30px #ff5e9c66);animation:bob 2.6s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-8px) rotate(3deg)}}
+.rules{display:grid;gap:10px;margin:0 0 22px}
+.rule{display:flex;gap:12px;align-items:center;border:1px solid var(--line);background:#ffffff09;border-radius:16px;padding:12px 14px;font-size:14px;line-height:1.4}
+.rule b{font-size:22px}
+.deal{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:22px}
+.deal div{border-radius:16px;padding:14px;font-size:13px;line-height:1.45;border:1px solid var(--line)}
+.deal .w{background:#8ce7d312;border-color:#8ce7d340;color:#c6fbef}
+.deal .l{background:#ff5e9c12;border-color:#ff5e9c40;color:#ffd6e6}
+.deal strong{display:block;font-size:14px;margin-bottom:4px}
+.btn{width:100%;border:0;border-radius:16px;padding:16px 20px;font-weight:850;color:#fff;background:linear-gradient(110deg,#ff4f91,#a16eff);box-shadow:0 12px 30px #d64f9c40;font-size:16px;transition:transform .2s}
+.btn:active{transform:scale(.97)}
+.btn.wa{background:linear-gradient(110deg,#25b865,#1c9e6b);box-shadow:0 12px 30px #1fa86a40}
+.btn.ghost{margin-top:10px;background:#ffffff10;border:1px solid var(--line);box-shadow:none;color:#f1ecff}
+.hud{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;font-weight:800}
+.hud span{border:1px solid var(--line);background:#ffffff0d;padding:8px 14px;border-radius:99px;font-size:15px}
+.bar{height:8px;border-radius:9px;background:#ffffff14;overflow:hidden;margin-bottom:12px}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#ff5e9c,#8beaf2);transition:width .2s}
+.arena{position:relative;height:min(62vh,520px);border-radius:24px;border:1px solid var(--line);background:linear-gradient(180deg,#ffffff0a,#ff5e9c0d);overflow:hidden;touch-action:manipulation;user-select:none;-webkit-user-select:none}
+.it{position:absolute;top:-60px;font-size:44px;line-height:1;padding:8px;cursor:pointer;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(calc(min(62vh,520px) + 80px))}}
+.pop{position:absolute;font-weight:900;font-size:22px;pointer-events:none;animation:pop .7s ease-out forwards}
+@keyframes pop{to{transform:translateY(-46px);opacity:0}}
+.count{position:absolute;inset:0;display:grid;place-items:center;font-size:90px;font-weight:900;background:#0d0d20cc;z-index:5}
+.boxes{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0}
+.box{aspect-ratio:1;border-radius:20px;border:1px solid #ffffff2a;background:linear-gradient(145deg,#8a4b34,var(--choc));font-size:42px;color:#fff;box-shadow:0 10px 26px #0005;transition:transform .25s,opacity .25s}
+.box:active{transform:scale(.95)}
+.box.off{opacity:.3;pointer-events:none}
+.box.pick{outline:3px solid var(--pink)}
+.wish{display:none;border:1px solid #ff5e9c55;background:linear-gradient(120deg,#ff5e9c18,#8b7bff12);border-radius:18px;padding:16px;margin-bottom:16px;font-weight:700;line-height:1.5}
+textarea{width:100%;min-height:110px;border:1px solid #ffffff22;background:#0f1025;color:#fff;border-radius:14px;padding:14px;outline:none;margin:6px 0 16px;resize:vertical}
+textarea:focus{border-color:#a89aff;box-shadow:0 0 0 3px #8b7bff22}
+.fl{position:fixed;bottom:-40px;pointer-events:none;animation:up 3.2s ease-in forwards;z-index:9}
+@keyframes up{to{transform:translateY(-110vh) rotate(25deg);opacity:0}}
+.small{font-size:11px;color:#777693;text-align:center;margin-top:12px}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <noscript><div class="nojs">⚠️ Игра не запустилась в этом окне. Нажми значок «Поделиться» (квадрат со стрелкой) → <b>«Открыть в Safari»</b> и уже там нажми «Принять вызов».</div></noscript>
+  <div class="top"><span>🍓 Сладкий вызов</span><span class="badge" id="badge">● ИГРА ЖДЁТ</span></div>
+
+  <!-- 1. Интро -->
+  <section class="screen on" id="s-intro">
+    <div class="hero">🍓🍫</div>
+    <div class="eyebrow">Для Елназ · секретный уровень</div>
+    <h1>Клубника <span class="g">в шоколаде</span></h1>
+    <p>Котик спасён, но у меня остался ещё один вызов. Сыграем? Без давления, просто азарт. 😏</p>
+    <div class="rules">
+      <div class="rule"><b>⏱️</b><span>20 секунд. Лови пальцем падающие клубнички.</span></div>
+      <div class="rule"><b>🍓 🍫 🍋</b><span>🍓 = +1, 🍫 = +3 (редкая), 🍋 = −2. Лимоны — кислая подлость.</span></div>
+      <div class="rule"><b>🎯</b><span>Набери <b style="font-size:inherit" id="goalTxt">15</b> очков, и ты победила.</span></div>
+    </div>
+    <div class="deal">
+      <div class="w"><strong>Выиграешь 🏆</strong>Загадываешь любое желание, а я его выполняю.</div>
+      <div class="l"><strong>Проиграешь 🍬</strong>Выбираешь конфету-сюрприз, а желание выполняешь ты.</div>
+    </div>
+    <button type="button" class="btn" id="start">Принять вызов 🍓</button>
+    <div class="small">Нервы тоже часть игры 😼</div>
+  </section>
+
+  <!-- 2. Игра -->
+  <section class="screen" id="s-game">
+    <div class="hud"><span>🍓 <b id="score">0</b> / <b id="goal">15</b></span><span>⏱️ <b id="time">20</b></span></div>
+    <div class="bar"><i id="bar"></i></div>
+    <div class="arena" id="arena"><div class="count" id="count">3</div></div>
+  </section>
+
+  <!-- 3. Победа -->
+  <section class="screen" id="s-win">
+    <div class="hero">🏆</div>
+    <div class="eyebrow">Ты выиграла</div>
+    <h2>Елназ побеждает! <span class="g">Твоё желание.</span></h2>
+    <p>Счёт: <b id="winScore" style="color:#fff"></b>. Загадывай что хочешь, в разумных пределах, но я не жадный. Обещаю выполнить. 🤝</p>
+    <label for="wishText" style="font-size:12px;font-weight:800;color:#d8d4ef">✨ Моё желание:</label>
+    <textarea id="wishText" placeholder="Напиши здесь..."></textarea>
+    <button class="btn wa" id="sendWin">Отправить желание в WhatsApp 💚</button>
+    <button class="btn ghost" id="againWin">Сыграть ещё раз 🔄</button>
+  </section>
+
+  <!-- 4. Проигрыш -->
+  <section class="screen" id="s-lose">
+    <div class="hero">🍬</div>
+    <div class="eyebrow">Почти получилось</div>
+    <h2>Проигрыш... но с <span class="g">шоколадом</span></h2>
+    <p>Счёт: <b id="loseScore" style="color:#fff"></b>. Выбери одну конфету, внутри спрятано твоё задание. Выбирай мудро. 😈</p>
+    <div class="boxes" id="boxes"></div>
+    <div class="wish" id="wishCard"></div>
+    <button class="btn wa" id="sendLose" style="display:none">Принять и отправить в WhatsApp 💚</button>
+    <button class="btn ghost" id="againLose">Реванш! Сыграть ещё раз 🔄</button>
+  </section>
+</main>
+
+<script>
+/* ===== НАСТРОЙКИ (можно менять) ===== */
+const PHONE = '77079883203';
+const GOAL = 15;          // сколько очков нужно набрать
+const SECONDS = 20;       // длительность игры
+const NAME = 'Елназ';
+// Желания, которые прячутся в конфетах, если она проиграет:
+const WISHES = [
+  '🍓 Сходим вместе за десертом, и ты сама выберешь, какой я угощаю... а я выбираю место!',
+  '☕ Одна прогулка с кофе, час без телефонов, только болтаем.',
+  '🍫 Приготовим или купим что-то шоколадное и съедим вместе. Выбираю я!'
+];
+/* ===================================== */
+
+const $ = id => document.getElementById(id);
+/* надёжное нажатие для iPhone: click + touchend без двойного срабатывания */
+function tap(el, fn) {
+  let last = 0;
+  const h = e => { const n = Date.now(); if (n - last < 500) return; last = n; fn(e); };
+  el.addEventListener('click', h);
+  el.addEventListener('touchend', e => { e.preventDefault(); h(e); }, { passive: false });
+}
+const show = id => { document.querySelectorAll('.screen').forEach(s => s.classList.toggle('on', s.id === id)); window.scrollTo(0, 0); };
+$('goal').textContent = GOAL; $('goalTxt').textContent = GOAL; $('time').textContent = SECONDS;
+
+let score = 0, left = SECONDS, spawnT, clockT, running = false;
+const arena = $('arena');
+
+function float(emojis) {
+  for (let i = 0; i < 26; i++) {
+    const s = document.createElement('span');
+    s.className = 'fl'; s.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+    s.style.left = Math.random() * 100 + 'vw';
+    s.style.fontSize = 18 + Math.random() * 22 + 'px';
+    s.style.animationDelay = Math.random() * .8 + 's';
+    document.body.appendChild(s); setTimeout(() => s.remove(), 4200);
+  }
+}
+
+function setScore(n) {
+  score = Math.max(0, n);
+  $('score').textContent = score;
+  $('bar').style.width = Math.min(100, score / GOAL * 100) + '%';
+}
+
+function spawn() {
+  if (!running) return;
+  const r = Math.random();
+  const t = r < .14 ? ['🍫', 3] : r < .38 ? ['🍋', -2] : ['🍓', 1];
+  const el = document.createElement('div');
+  el.className = 'it'; el.textContent = t[0];
+  const w = arena.clientWidth;
+  el.style.left = Math.random() * (w - 64) + 'px';
+  el.style.animationDuration = (1.9 + Math.random() * 1.2 - (SECONDS - left) * .03) + 's';
+  const hit = e => {
+    e.preventDefault();
+    if (!running || el.dataset.d) return;
+    el.dataset.d = 1; setScore(score + t[1]);
+    const p = document.createElement('div');
+    p.className = 'pop'; p.textContent = (t[1] > 0 ? '+' : '') + t[1];
+    p.style.left = el.offsetLeft + 12 + 'px';
+    p.style.top = el.getBoundingClientRect().top - arena.getBoundingClientRect().top + 'px';
+    p.style.color = t[1] > 0 ? '#ffb3d1' : '#ffe27a';
+    arena.appendChild(p); setTimeout(() => p.remove(), 700);
+    el.remove();
+  };
+  el.addEventListener('pointerdown', hit);
+  el.addEventListener('animationend', () => el.remove());
+  arena.appendChild(el);
+}
+
+function startGame() {
+  show('s-game'); setScore(0); left = SECONDS; $('time').textContent = left;
+  arena.querySelectorAll('.it,.pop').forEach(e => e.remove());
+  $('badge').textContent = '● ИГРА ИДЁТ';
+  const c = $('count'); c.style.display = 'grid';
+  let n = 3; c.textContent = n;
+  const cd = setInterval(() => {
+    n--;
+    if (n > 0) { c.textContent = n; return; }
+    if (n === 0) { c.textContent = 'GO!'; return; }
+    clearInterval(cd); c.style.display = 'none'; running = true;
+    spawnT = setInterval(spawn, 560);
+    clockT = setInterval(() => {
+      left--; $('time').textContent = left;
+      if (left <= 0) end();
+    }, 1000);
+  }, 750);
+}
+
+function end() {
+  running = false; clearInterval(spawnT); clearInterval(clockT);
+  arena.querySelectorAll('.it').forEach(e => e.remove());
+  if (score >= GOAL) {
+    $('winScore').textContent = score + ' из ' + GOAL;
+    $('badge').textContent = '🏆 ПОБЕДА'; show('s-win'); float(['🍓', '🍫', '✨', '💖']);
+  } else {
+    $('loseScore').textContent = score + ' из ' + GOAL;
+    $('badge').textContent = '🍬 СЮРПРИЗ'; show('s-lose');
+  }
+}
+
+function wa(text) { const u = 'https://wa.me/' + PHONE + '?text=' + encodeURIComponent(text); const w = window.open(u, '_blank'); if (!w) location.href = u; }
+
+/* Конфеты при проигрыше */
+let chosen = null, order = [];
+function buildBoxes() {
+chosen = null;
+order = [...WISHES.keys()].sort(() => Math.random() - .5);
+$('boxes').innerHTML = '';
+$('wishCard').style.display = 'none';
+$('sendLose').style.display = 'none';
+['🍫', '🍬', '🍭'].forEach((emoji, i) => {
+  const b = document.createElement('button');
+  b.className = 'box'; b.textContent = emoji;
+  b.onclick = () => {
+    chosen = WISHES[order[i]];
+    document.querySelectorAll('.box').forEach(x => { x.classList.add('off'); });
+    b.classList.remove('off'); b.classList.add('pick');
+    $('wishCard').style.display = 'block'; $('wishCard').textContent = chosen;
+    $('sendLose').style.display = 'block'; float(['🍬', '🍫', '💗']);
+  };
+  const f = b.onclick; b.onclick = null; tap(b, f);
+  $('boxes').appendChild(b);
+});
+}
+buildBoxes();
+
+$('start').onclick = startGame;
+const again = () => { buildBoxes(); $('wishText').value = ''; startGame(); };
+$('againWin').onclick = again;
+$('againLose').onclick = again;
+['start', 'sendWin', 'sendLose', 'againWin', 'againLose'].forEach(id => { const f = $(id).onclick; $(id).onclick = null; tap($(id), f); });
+$('sendWin').onclick = () => {
+  const w = $('wishText').value.trim();
+  if (!w) { $('wishText').focus(); return; }
+  wa('Я выиграла в «Клубнике в шоколаде»! 🏆🍓\nСчёт: ' + score + '/' + GOAL + '\n\nМоё желание: ' + w + '\n\nЖду исполнения 😏');
+};
+$('sendLose').onclick = () => {
+  wa('Я проиграла в «Клубнике в шоколаде» 🍬 (' + score + '/' + GOAL + ')\nМне выпала конфета:\n' + chosen + '\n\nЯ принимаю условия 😼');
+};
+</script>
+</body>
+</html>
